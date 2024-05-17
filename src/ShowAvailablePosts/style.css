@@ -1,0 +1,102 @@
+.showAvailablePosts{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.apostCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 17rem;
+    background: rgba(54, 65, 106, .15);
+    border-radius: 0.8rem;
+    box-sizing: border-box;
+    padding: 2rem;
+}
+
+.nameAndOtherDetails{
+    display: flex;
+    flex-direction: column;
+}
+
+.nameOfProperty{
+    color: #36416a;
+    font-size: 2.83962rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.placeOFProperty, .areadOfProperty, .priceOfProperty{
+    font-family: DM Sans;
+    font-style: normal;
+    line-height: 147.2%;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.linkToShowProperty{
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    font-family: DM Sans;
+    font-size: 1.86104rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 147.2%;
+    margin: 0;
+    cursor: pointer;
+}
+
+.linkToShowProperty :hover{
+    color: darkblue;
+}
+
+.likeButtonAndlinkToFullPropertyView{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.alikeCounterForProperty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #c7cbd6;
+    border-radius: 1.59836rem;
+    height: 6.5rem;
+    width: 10rem;
+    cursor: pointer;
+}
+
+.likeCounter{
+    color: #000;
+    cursor: pointer;
+    font-family: DM Sans;
+    font-size: 1.86104rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 147.2%;
+    margin: 0;
+}
+
+.likeSymbolIcon{
+    color: #000;
+    cursor: pointer;
+    font-family: DM Sans;
+    font-size: 1.86104rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 147.2%;
+    margin: 0;
+}

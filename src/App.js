@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import { Provider } from "./context/StoryContext";
+import Main from "./Main";
+import Login from "./Login";
+import SignUp from "./SignUp";
+import AddProperty from "./FiterAndAddPost/AddPropertyForm";
+import PropertyDetail from "./ShowAvailablePosts/PropertyDisplay";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/add-property" element={<AddProperty />} />
+          <Route path="/property/:id" element={<PropertyDetail />} />
+        </Routes>
+      </div>
+    </Provider>
   );
 }
 
