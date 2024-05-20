@@ -28,19 +28,31 @@ function PropertyDetail() {
     fetchProperty();
   }, [propertyId]);
 
-  const sendEmailToUser = async (sellerInfo) => {
+  const sendEmailToUser = async (property) => {
+    // Getting user email from local storage
+    const userEmail = localStorage.getItem("email");
+
+    // Constructing query parameters as individual key-value pairs
+    const params = {
+      to_email: userEmail,
+      seller_name: property.seller_name,
+      seller_contact: property.seller_contact,
+      seller_email: property.seller_email,
+      property_name: property.name,
+    };
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_HOST}/api/send-email`,
-        { email: localStorage.getItem("email"), sellerInfo }
+        params
       );
-      return response.data.message;
+      console.log(response.data.message);
     } catch (error) {
       console.error("Error sending email:", error);
       throw error;
     }
   };
   const handleShowSellerInfo = async (property) => {
+    sendEmailToUser(property);
     setShowSellerInfo(property);
   };
 
@@ -92,7 +104,7 @@ function PropertyDetail() {
           </div>
           <button
             className="interested-button"
-            onClick={(property) => handleShowSellerInfo(property)}
+            onClick={() => handleShowSellerInfo(property)}
           >
             I am interested
           </button>
